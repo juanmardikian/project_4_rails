@@ -110,3 +110,9 @@ Breakdown the initial logic of the component pseudocode
 | App        | This component will render the Header, Footer and Routes.                                                                | Functional | User Sign up an login|
 | Login      | This component allows a user to authenticate themselves, to allow the user to access to the portfolios | Functional | Username, Password         | 
 | Sign In       | This component will render the Header, Footer and the sign in form.                                                                | Functional | User Sign up an login|
+| Header      | This component will render the Header                                                                | Functional | Not Applicable|
+| Footer     | This component will rsocial media Icons      | Functional | Not Applicable|
+| Portfolio     | This component will render the different porffolios of the user    | Functional | API Data|
+| Stocks    | This component will render the different stocks   | Functional | API Data|
+| Money    | This component will add the money the user can spen in stocks  | Functional | Not applicable|
+
