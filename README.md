@@ -109,4 +109,4 @@ Breakdown the initial logic of the component pseudocode
 |------------|--------------------------------------------------------------------------------------------------------------------------|------------|----------------------------|
 | App        | This component will render the Header, Footer and Routes.                                                                | Functional | User Sign up an login|
 | Login      | This component allows a user to authenticate themselves, to allow the user to access to the portfolios | Functional | Username, Password         | 
-| App        | This component will render the Header, Footer and Routes.                                                                | Functional | User Sign up an login|
+| Sign In       | This component will render the Header, Footer and the sign in form.                                                                | Functional | User Sign up an login|
