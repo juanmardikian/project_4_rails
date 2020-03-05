@@ -30,3 +30,39 @@ A website where you can register and login, add money in cash and buy different 
 ​
 ![ERD](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%2011.57.07%20AM.png)
 ​
+
+
+## Endpoints
+getUsers - returns users
+	* GET /users. return all of the users
+  * GET /users/:id
+  * GET /users/:id/portfolios
+  * GET /users/:id/portfolios/:id
+  * PUT /users/:id/portfolios/:id/stock/:id
+  
+  * createUser, updateUser, deleteUser - create, update or delete user information
+	* POST /users/:id
+	* PUT users/:id
+	* DELETE users/:id
+  
+  Sample JSON from GET `/users`
+​
+
+
+			[
+			    {
+			        “name” : “mardikian”,
+               “email” : “juan@mardikian.es”,
+			        “password” : “laMadre”,
+			     
+			        “portfolios : [
+			            {   
+			                “tech” : “apple”,
+			            },
+			            {
+			                “robotics” : “IBM”
+			            }
+			        ]
+			    }
+			]
+  
