@@ -6,7 +6,7 @@
 
 ## Overview
 
-_**Build your own portfolio** A website where you can register and login, add money in cash and buy different stock form different portofolios that we recommend you to buy
+**Build your own portfolio** A website where you can register and login, add money in cash and buy different stock form different portofolios that we recommend you to buy
 
 
 
@@ -19,9 +19,9 @@ _**Build your own portfolio** A website where you can register and login, add mo
 - Backend with full CRUD in ruby
 - Shared components, like header and footer and probably portfolios and stocks
 ​
+
 ### MVP Libraries
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project.
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
