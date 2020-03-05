@@ -52,17 +52,40 @@ getUsers - returns users
 			[
 			    {
 			        “name” : “mardikian”,
-               “email” : “juan@mardikian.es”,
+                                “email” : “juan@mardikian.es”,
 			        “password” : “laMadre”,
 			     
-			        “portfolios : [
-			            {   
-			                “tech” : “apple”,
-			            },
-			            {
-			                “robotics” : “IBM”
-			            }
-			        ]
-			    }
-			]
-  
+			        “portfolios : [{
+						name: portfolio_tech{
+							stock:{
+								name: apple,
+								price: 200
+								},
+								{
+								name: microsoft,
+								price: 200
+								},
+								
+						name: portfolio_pharma{
+							stock:{
+								name: pfizer,
+								price: 200
+								},
+								{
+								name: proctel,
+								price: 200
+								}
+						
+						}]
+						
+						
+				}
+			  ]	
+			
+				
+
+## React Component Hierarchy
+​
+​
+​![Component Hierachy](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%202.11.24%20PM.png)
+​
