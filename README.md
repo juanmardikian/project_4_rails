@@ -56,7 +56,7 @@ getUsers - returns users
 			        “password” : “laMadre”,
 			     
 			        “portfolios : [{
-						name: portfolio_tech{
+						portfolio_tech{
 							stock:{
 								name: apple,
 								price: 200
@@ -66,7 +66,7 @@ getUsers - returns users
 								price: 200
 								},
 								
-						name: portfolio_pharma{
+						portfolio_pharma{
 							stock:{
 								name: pfizer,
 								price: 200
@@ -89,3 +89,19 @@ getUsers - returns users
 ​
 ​![Component Hierachy](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%202.11.24%20PM.png)
 ​
+
+## Components
+​
+Breakdown the initial logic of the component pseudocode
+​
+## ​Routes
+
+| Components | Description                                                                                                              | Type       | State                      |
+|------------|--------------------------------------------------------------------------------------------------------------------------|------------|----------------------------|
+| App        | This component will render the Header, Footer and Routes.                                                                | Functional | User Sign up an login|
+| Login      | This component allows a user to authenticate themselves, to allow the user to access to the portfolios | Functional | Username, Password         |
+| Nav        | Container for Nav icons and Nav links.  |
+| Footer     | This component contains links including contact us.                                                                      | Functional | Not Applicable             |
+| Header     | This component contains two seperate Nav sections for the icons and link portions.                                       | Functional | Not Applicable             |
+| Search     | This component show the search fields and queryies the API                                                               | Functional | Search Query               |
+| Form       | Shows fields                                                                                                             | Functional | Query                      |
