@@ -47,36 +47,45 @@ getUsers - returns users
   
   Sample JSON from GET `/users`
 ​
-
+users[0].portfolios[0].stocks[0].name = 'apple'
 
 			[
 			    {
-			        “name” : “mardikian”,
+			        "id": 1
+				“name” : “mardikian”,
                                 “email” : “juan@mardikian.es”,
 			        “password” : “laMadre”,
-			     
+			  
 			        “portfolios : [{
-						portfolio_tech{
-							stock:{
+						{
+							"id":1
+							name: 'tech'
+							stocks:[{
+								id: 1
 								name: apple,
 								price: 200
 								},
 								{
-								name: microsoft,
-								price: 200
-								},
+								name: "microsoft",
+								"price": 200
+								}]
+						},
 								
-						portfolio_pharma{
-							stock:{
+						{
+							id:2
+							name: 'pharma'
+							stocks:[{
+								id: 1
 								name: pfizer,
 								price: 200
 								},
 								{
 								name: proctel,
 								price: 200
-								}
+								}]
+						}
 						
-						}]
+						]
 						
 						
 				}
@@ -100,7 +109,7 @@ Breakdown the initial logic of the component pseudocode
 |------------|--------------------------------------------------------------------------------------------------------------------------|------------|----------------------------|
 | App        | This component will render the Header, Footer and Routes.                                                                | Functional | User Sign up an login|
 | Login      | This component allows a user to authenticate themselves, to allow the user to access to the portfolios | Functional | Username, Password         |
-| Nav        | Container for Nav icons and Nav links.  |
+
 | Footer     | This component contains links including contact us.                                                                      | Functional | Not Applicable             |
 | Header     | This component contains two seperate Nav sections for the icons and link portions.                                       | Functional | Not Applicable             |
 | Search     | This component show the search fields and queryies the API                                                               | Functional | Search Query               |
