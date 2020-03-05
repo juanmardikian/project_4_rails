@@ -63,7 +63,8 @@ Breakdown the initial logic of the component pseudocode
 | Portfolio     | This component will render the different porffolios of the user    | Functional | API Data|
 | Stocks    | This component will render the different stocks   | Functional | API Data|
 | Money    | This component will add the money the user can spen in stocks  | Functional | Not applicable|
-| user     | This component will some personal data, and the portfolio the user has    | Functional | API Data|
+| useroverview    | This component will some personal data, and the portfolio the user has    | Functional | API Data|
+| main   | This have the user overview once you are logged in, or the login button if your are signed out| Functional | API Data|
 
 ### MVP Server (Back End)
 
@@ -142,13 +143,13 @@ users[0].portfolios[0].stocks[0].name = 'apple'
 | Functionality | 10 hrs         |           |
 | Home Sign in          | 12 hrs         |          |
 | LOG IN        | 12 hrs         |           |
-| PORTFOLIO          | 18 hrs         |           |
+| PORTFOLIO          | 10 hrs         |           |
 | STOCKS              | 8 hrs          |           |
-| Full CSS                 | 30 hrs         |           |
-| Full Backend CRUD        | 20 hrs         |          |
+| Full CSS                 | 10 hrs         |           |
+| Full Backend CRUD        | 10 hrs         |          |
 | GRAPHICS           | 12 hrs         |           |
 | Front End CRUD           | 8 hrs          |           |
-|                          |  Hours      |         |
+|                          |  80 Hours      |         |
 
 
 
