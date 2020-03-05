@@ -108,9 +108,4 @@ Breakdown the initial logic of the component pseudocode
 | Components | Description                                                                                                              | Type       | State                      |
 |------------|--------------------------------------------------------------------------------------------------------------------------|------------|----------------------------|
 | App        | This component will render the Header, Footer and Routes.                                                                | Functional | User Sign up an login|
-| Login      | This component allows a user to authenticate themselves, to allow the user to access to the portfolios | Functional | Username, Password         |
-
-| Footer     | This component contains links including contact us.                                                                      | Functional | Not Applicable             |
-| Header     | This component contains two seperate Nav sections for the icons and link portions.                                       | Functional | Not Applicable             |
-| Search     | This component show the search fields and queryies the API                                                               | Functional | Search Query               |
-| Form       | Shows fields                                                                                                             | Functional | Query                      |
+| Login      | This component allows a user to authenticate themselves, to allow the user to access to the portfolios | Functional | Username, Password         | 
