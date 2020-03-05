@@ -9,10 +9,7 @@
 _**Build your own portfolio** A website where you can register and login, add money in cash and buy different stock form different portofolios that we recommend you to buy
 
 
-## Wireframes
-![1](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%2011.04.41%20AM.png)
-![2](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%2011.09.05%20AM.png)
-![3](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%2011.30.07%20AM.png)
+
 
 ## MVP Goals
 ​
@@ -29,18 +26,46 @@ _**Build your own portfolio** A website where you can register and login, add mo
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
 |      React       | Front end                        |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
+|   React Router   | react-router-dom |
 |     Ruby     | Ruby gems |
 |  Ruby Rails  | Rake |
 
-
+### MVP Client (Front End)
+## Wireframes
+![1](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%2011.04.41%20AM.png)
+![2](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%2011.09.05%20AM.png)
+![3](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%2011.30.07%20AM.png)
 
 ## ERD Diagram
 ​
 ![ERD](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%2011.57.07%20AM.png)
 ​
 
+## React Component Hierarchy
+​
+​
+​![Component Hierachy](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%202.11.24%20PM.png)
+​
+
+## Components
+​
+Breakdown the initial logic of the component pseudocode
+​
+## ​Routes
+
+| Components | Description                                                                                                              | Type       | State                      |
+|------------|--------------------------------------------------------------------------------------------------------------------------|------------|----------------------------|
+| App        | This component will render the Header, Footer and Routes.                                                                | Functional | User Sign up an login|
+| Login      | This component allows a user to authenticate themselves, to allow the user to access to the portfolios | Functional | Username, Password         | 
+| Sign In       | This component will render the Header, Footer and the sign in form.                                                                | Functional | User Sign up an login|
+| Header      | This component will render the Header                                                                | Functional | Not Applicable|
+| Footer     | This component will rsocial media Icons      | Functional | Not Applicable|
+| Portfolio     | This component will render the different porffolios of the user    | Functional | API Data|
+| Stocks    | This component will render the different stocks   | Functional | API Data|
+| Money    | This component will add the money the user can spen in stocks  | Functional | Not applicable|
+| user     | This component will some personal data, and the portfolio the user has    | Functional | API Data|
+
+### MVP Server (Back End)
 
 ## Endpoints
 getUsers - returns users
@@ -103,35 +128,15 @@ users[0].portfolios[0].stocks[0].name = 'apple'
 			
 				
 
-## React Component Hierarchy
-​
-​
-​![Component Hierachy](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%202.11.24%20PM.png)
-​
 
-## Components
-​
-Breakdown the initial logic of the component pseudocode
-​
-## ​Routes
-
-| Components | Description                                                                                                              | Type       | State                      |
-|------------|--------------------------------------------------------------------------------------------------------------------------|------------|----------------------------|
-| App        | This component will render the Header, Footer and Routes.                                                                | Functional | User Sign up an login|
-| Login      | This component allows a user to authenticate themselves, to allow the user to access to the portfolios | Functional | Username, Password         | 
-| Sign In       | This component will render the Header, Footer and the sign in form.                                                                | Functional | User Sign up an login|
-| Header      | This component will render the Header                                                                | Functional | Not Applicable|
-| Footer     | This component will rsocial media Icons      | Functional | Not Applicable|
-| Portfolio     | This component will render the different porffolios of the user    | Functional | API Data|
-| Stocks    | This component will render the different stocks   | Functional | API Data|
-| Money    | This component will add the money the user can spen in stocks  | Functional | Not applicable|
-| user     | This component will some personal data, and the portfolio the user has    | Functional | API Data|
 
 ## Priority Matris
 ​
 ![Matrix](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%202.47.32%20PM.png)
 ​
 
+
+### Timeframes
 | Component                | Estimated Time | Actual Time |
 |--------------------------|----------------|-------------|
 | Functionality | 10 hrs         |           |
@@ -144,6 +149,34 @@ Breakdown the initial logic of the component pseudocode
 | GRAPHICS           | 12 hrs         |           |
 | Front End CRUD           | 8 hrs          |           |
 |                          |  Hours      |         |
+
+
+
+### Schedule
+
+> Use this section to look at your project week and plan out when and what you want to do.
+
+|  Day   | Deliverables                              |
+| ------ | ----------------------------------------- |
+|Mar 4th | project proposal worksheet / psuedocoding |
+|Mar 5th | project pitch / build out endpoints       |
+|Mar 6th | Build out front-end components            |
+|Mar 7th | OFF                                       |
+|Mar 8th | impliment user auth                       |
+|Mar 9th | styling                                   |
+|Mar 10th| MVP, begin post-MVP                       |
+|Mar 11th| post-MVP                                  |
+|Mar 12th| polishing                                 |
+|Mar 13th| final presentations                       |
+
+
+## Post-MVP
+​
+- Add money to your portfolio
+- Buy stocks and add it to your portfolio and compared in time to the market
+- Sell stocks, taking them from your portfolio and adding it to your money
+- Auth with Facebook/Google
+​
 
 
 ## Expected Issues
@@ -160,10 +193,3 @@ Try to make and understand how to relate the front end with the back end. And tr
 ## Issues and Resolutions
 
 
-## Post-MVP
-​
-- Add money to your portfolio
-- Buy stocks and add it to your portfolio and compared in time to the market
-- Sell stocks, taking them from your portfolio and adding it to your money
-- Auth with Facebook/Google
-​
