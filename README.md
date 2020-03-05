@@ -124,7 +124,7 @@ Breakdown the initial logic of the component pseudocode
 
 | Component                | Estimated Time | Actual Time |
 |--------------------------|----------------|-------------|
-| Contact Us Functionality | 10 hrs         | 8           |
+| Functionality | 10 hrs         | 8           |
 | Homepage Views           | 12 hrs         | 12          |
 | Help Center View         | 12 hrs         | 16          |
 | Hamburger Menu           | 18 hrs         | 12          |
