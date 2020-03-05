@@ -115,4 +115,5 @@ Breakdown the initial logic of the component pseudocode
 | Portfolio     | This component will render the different porffolios of the user    | Functional | API Data|
 | Stocks    | This component will render the different stocks   | Functional | API Data|
 | Money    | This component will add the money the user can spen in stocks  | Functional | Not applicable|
+| user     | This component will some personal data, and the portfolio the user has    | Functional | API Data|
 
