@@ -121,3 +121,16 @@ Breakdown the initial logic of the component pseudocode
 ​
 ![Matrix](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%202.47.32%20PM.png)
 ​
+
+| Component                | Estimated Time | Actual Time |
+|--------------------------|----------------|-------------|
+| Contact Us Functionality | 10 hrs         | 8           |
+| Homepage Views           | 12 hrs         | 12          |
+| Help Center View         | 12 hrs         | 16          |
+| Hamburger Menu           | 18 hrs         | 12          |
+| Nav Footer               | 8 hrs          | 6           |
+| Full CSS                 | 24 hrs         | 36          |
+| Full Backend CRUD        | 30 hrs         | 40          |
+| Volunteer View           | 12 hrs         | 0           |
+| Front End CRUD           | 6 hrs          | 6           |
+|                          | 132 Hours      | 136         |
