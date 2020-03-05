@@ -117,3 +117,7 @@ Breakdown the initial logic of the component pseudocode
 | Money    | This component will add the money the user can spen in stocks  | Functional | Not applicable|
 | user     | This component will some personal data, and the portfolio the user has    | Functional | API Data|
 
+## Priority Matris
+​
+![Matrix](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%202.47.32%20PM.png)
+​
