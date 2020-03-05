@@ -131,6 +131,6 @@ Breakdown the initial logic of the component pseudocode
 | STOCKS              | 8 hrs          |           |
 | Full CSS                 | 30 hrs         |           |
 | Full Backend CRUD        | 20 hrs         |          |
-| Volunteer View           | 12 hrs         |           |
+| GRAPHICS           | 12 hrs         |           |
 | Front End CRUD           | 8 hrs          |           |
 |                          |  Hours      |         |
