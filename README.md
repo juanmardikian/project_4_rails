@@ -124,13 +124,13 @@ Breakdown the initial logic of the component pseudocode
 
 | Component                | Estimated Time | Actual Time |
 |--------------------------|----------------|-------------|
-| Functionality | 10 hrs         | 8           |
-| Homepage Views           | 12 hrs         | 12          |
-| Help Center View         | 12 hrs         | 16          |
-| Hamburger Menu           | 18 hrs         | 12          |
-| Nav Footer               | 8 hrs          | 6           |
-| Full CSS                 | 24 hrs         | 36          |
-| Full Backend CRUD        | 30 hrs         | 40          |
-| Volunteer View           | 12 hrs         | 0           |
-| Front End CRUD           | 6 hrs          | 6           |
-|                          | 132 Hours      | 136         |
+| Functionality | 10 hrs         |           |
+| Home Sign in          | 12 hrs         |          |
+| LOG IN        | 12 hrs         |           |
+| PORTFOLIO          | 18 hrs         |           |
+| STOCKS              | 8 hrs          |           |
+| Full CSS                 | 30 hrs         |           |
+| Full Backend CRUD        | 20 hrs         |          |
+| Volunteer View           | 12 hrs         |           |
+| Front End CRUD           | 8 hrs          |           |
+|                          |  Hours      |         |
