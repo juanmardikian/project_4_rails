@@ -134,3 +134,17 @@ Breakdown the initial logic of the component pseudocode
 | GRAPHICS           | 12 hrs         |           |
 | Front End CRUD           | 8 hrs          |           |
 |                          |  Hours      |         |
+
+
+## Expected Issues
+
+#### Back-End
+​
+Issues about my capacity in order to do a back en properly by my own, to fully understand what am i doing
+​
+
+#### Front-End
+​
+Try to make and understand how to relate the front end with the back end. And try to associate the user with the portfolios, update the portfolios and make the logic and math behind making a portfolio
+​​
+## Issues and Resolutions
