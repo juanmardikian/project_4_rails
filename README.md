@@ -44,7 +44,7 @@
 ## React Component Hierarchy
 ​
 ​
-​![Component Hierachy](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%202.11.24%20PM.png)
+​![Component Hierachy](https://git.generalassemb.ly/juanmardikian/project_4/blob/master/Screen%20Shot%202020-03-05%20at%203.36.52%20PM.png)
 ​
 
 ## Components
