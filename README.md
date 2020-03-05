@@ -60,8 +60,9 @@ Breakdown the initial logic of the component pseudocode
 | Sign In       | This component will render the Header, Footer and the sign in form.                                                                | Functional | User Sign up an login|
 | Header      | This component will render the Header                                                                | Functional | Not Applicable|
 | Footer     | This component will rsocial media Icons      | Functional | Not Applicable|
+| Welcome     | This component render a welcome for you to log in or sing in      | Functional | Not Applicable|
 | Portfolio     | This component will render the different porffolios of the user    | Functional | API Data|
-| Stocks    | This component will render the different stocks   | Functional | API Data|
+| Stocks Viewer   | This component will render the different stocks   | Functional | API Data|
 | Money    | This component will add the money the user can spen in stocks  | Functional | Not applicable|
 | useroverview    | This component will some personal data, and the portfolio the user has    | Functional | API Data|
 | main   | This have the user overview once you are logged in, or the login button if your are signed out| Functional | API Data|
