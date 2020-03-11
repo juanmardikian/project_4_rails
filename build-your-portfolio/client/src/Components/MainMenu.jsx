@@ -7,7 +7,7 @@ import Banks from './Banks'
 
 export default function MainMenu(props) {
   return (
-    <div>
+    <div style={{backgroundColor:'white'}}>
         <Software stocks={props.stocks} invest={props.invest} setInvest={props.setInvest} />
         <Food stocks={props.stocks} invest={props.invest} setInvest={props.setInvest} />
         <Health stocks={props.stocks} invest={props.invest} setInvest={props.setInvest}/>

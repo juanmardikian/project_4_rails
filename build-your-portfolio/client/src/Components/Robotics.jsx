@@ -23,12 +23,33 @@ const vars = {
   }
 };
 
-export default function Robotics() {
+
+
+
+export default function Robotics(props) {
   const [open, setOpen] = useState(false);
 
   const [robotics, setRobotics] = useState([]);
 
   const [IBMStocks, setIBMStocks] = useState([]);
+
+
+  let cash = props.invest
+
+  const enoughToBuy = (stockPrice) =>{
+    if (stockPrice < cash){
+      return <img className="buySell" src={Buy} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) - parseFloat(stockPrice).toFixed(2))} />
+    }
+  }
+  
+  const enoughToSell =(stockPrice)=> {
+    // if(// i Own this stock){}
+    return(
+    <img className="buySell" src={Sell} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) + parseFloat(stockPrice).toFixed(2))}/>
+    )
+  }
+
+
 
   const filterIBM = () => {
     setIBMStocks(
@@ -123,10 +144,10 @@ export default function Robotics() {
               <h1>{IBMStocks[0] && IBMStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {IBMStocks[0] && enoughToBuy(IBMStocks[0].price)}
+              </div>
+              <div>
+                {IBMStocks[0] && enoughToSell(IBMStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -137,10 +158,10 @@ export default function Robotics() {
               <h1>{NVDAStocks[0] && NVDAStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {NVDAStocks[0] && enoughToBuy(NVDAStocks[0].price)}
+              </div>
+              <div>
+                {NVDAStocks[0] && enoughToSell(NVDAStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -151,10 +172,10 @@ export default function Robotics() {
               <h1>{TSLAStocks[0] && TSLAStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {TSLAStocks[0] && enoughToBuy(TSLAStocks[0].price)}
+              </div>
+              <div>
+                {TSLAStocks[0] && enoughToSell(TSLAStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -165,10 +186,10 @@ export default function Robotics() {
               <h1>{BABAStocks[0] && BABAStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {BABAStocks[0] && enoughToBuy(BABAStocks[0].price)}
+              </div>
+              <div>
+                {BABAStocks[0] && enoughToSell(BABAStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -179,10 +200,10 @@ export default function Robotics() {
               <h1>{INTCStocks[0] && INTCStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {INTCStocks[0] && enoughToBuy(INTCStocks[0].price)}
+              </div>
+              <div>
+                {INTCStocks[0] && enoughToSell(INTCStocks[0].price)}
             </div>
           </motion.div>
         </div>

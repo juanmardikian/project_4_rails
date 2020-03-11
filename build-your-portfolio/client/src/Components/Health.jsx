@@ -23,7 +23,7 @@ const vars = {
   }
 };
 
-export default function Health() {
+export default function Health(props) {
   const [open, setOpen] = useState(false);
 
   const [health, setHealth] = useState([]);
@@ -109,6 +109,22 @@ export default function Health() {
     // filterAmzn();
   }, [health]);
 
+
+
+  let cash = props.invest
+  const enoughToBuy = (stockPrice) =>{
+    if (stockPrice < cash){
+      return <img className="buySell" src={Buy} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) - parseFloat(stockPrice).toFixed(2))} />
+    }
+  }
+
+  const enoughToSell =(stockPrice)=> {
+    // if(// i Own this stock){}
+    return(
+    <img className="buySell" src={Sell} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) + parseFloat(stockPrice).toFixed(2))}/>
+    )
+  }
+
   return (
     <div className={open ? "allStocks click" : "allStocks"}>
      <div className='PlusText'>
@@ -128,10 +144,10 @@ export default function Health() {
               <h1>{pfizerStocks[0] && pfizerStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {pfizerStocks[0] && enoughToBuy(pfizerStocks[0].price)}
+              </div>
+              <div>
+                {pfizerStocks[0] && enoughToSell(pfizerStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -142,10 +158,10 @@ export default function Health() {
               <h1>{JJStocks[0] && JJStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {JJStocks[0] && enoughToBuy(JJStocks[0].price)}
+              </div>
+              <div>
+                {JJStocks[0] && enoughToSell(JJStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -156,10 +172,10 @@ export default function Health() {
               <h1>{NVSStocks[0] && NVSStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {NVSStocks[0] && enoughToBuy(NVSStocks[0].price)}
+              </div>
+              <div>
+                {NVSStocks[0] && enoughToSell(NVSStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -170,10 +186,10 @@ export default function Health() {
               <h1>{ABBVStocks[0] && ABBVStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {ABBVStocks[0] && enoughToBuy(ABBVStocks[0].price)}
+              </div>
+              <div>
+                {ABBVStocks[0] && enoughToSell(ABBVStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -184,10 +200,10 @@ export default function Health() {
               <h1>{SNYStocks[0] && SNYStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {SNYStocks[0] && enoughToBuy(SNYStocks[0].price)}
+              </div>
+              <div>
+                {SNYStocks[0] && enoughToSell(SNYStocks[0].price)}
             </div>
           </motion.div>
         </div>
