@@ -199,7 +199,7 @@ transition-duration: 0.2s;
   flex-direction: column;
   
   height: 20vw;
-  background-color: rgba(69, 134, 219, 0.3);
+  background-color:purple;
   /* background: url('./images/Stack.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -233,7 +233,7 @@ transition-duration: 0.2s;
 
   .Plus {
     width: 50px;
-    margin: 1px;
+    margin: 30px;
   }
 
   .allStocks{
