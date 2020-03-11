@@ -2,7 +2,7 @@ class PortfoliosController < ApplicationController
   before_action :authorize_request
 
   def index
-    @portfolios = Portfolio.where(user_id: params[:user_id])
+    @portfolios = @current_user.portfolios
     render json: { status: 200, portfolios: @portfolios }
   end
 

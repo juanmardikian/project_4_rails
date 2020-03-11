@@ -6,7 +6,12 @@ class StocksController < ApplicationController
     render json: { status: 200, stocks: @stocks }
   end
 
-  
+  def stocks_by_type
+    puts params
+
+    @stocks = Stock.where(stock_type: params[:stock_type], portfolio_id: nil)
+    render json: { status: 200, stocks: @stocks }
+  end
 
   def available_stocks
     @stocks = Stock.where(portfolio_id: nil)
@@ -38,29 +43,26 @@ class StocksController < ApplicationController
     render json: { status: 200, stock: @stock }
   end
 
-  def purchase 
+  def purchase
     @stock = Stock.find(params[:id])
     if @stock.portfolio_id == nil
-    @stock.update(transactions_params)
-    render json: { status: 200, stock: @stock }
+      @stock.update(transactions_params)
+      render json: { status: 200, stock: @stock }
     else
-        render json: { status: 422, error: "stock already purchased" }
+      render json: { status: 422, error: "stock already purchased" }
     end
   end
 
-  def sell 
+  def sell
     @stock = Stock.find(params[:id])
     @stock.update(portfolio_id: nil)
     render json: { status: 200, stock: @stock }
   end
 
-
   def destroy
     @stock = Stock.destroy(params[:id])
     render json: { status: 204 }
   end
-
-
 
   private
 
@@ -70,7 +72,5 @@ class StocksController < ApplicationController
 
   def stock_params
     params.require(:stock).permit(:name, :symbol, :price)
-
-    
   end
 end

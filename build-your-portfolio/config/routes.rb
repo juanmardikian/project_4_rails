@@ -16,11 +16,12 @@ Rails.application.routes.draw do
       get :available_stocks
       get :purchase_stocks
     end
-    member do  #a single will be purchase, allow you to purchase one single stock
+    member do #a single will be purchase, allow you to purchase one single stock
       put :purchase
       put :sell
     end
   end
 
-  get "/stocks" => "stocks#fetch"
+  # get "/stocks" => "stocks#fetch"
+  get "/stocks_t/:stock_type" => "stocks#stocks_by_type"
 end

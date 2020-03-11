@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_153713) do
     t.string "symbol"
     t.string "name"
     t.float "price"
+    t.string "stock_type"
     t.bigint "portfolio_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -34,7 +35,8 @@ ActiveRecord::Schema.define(version: 2020_03_06_153713) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false

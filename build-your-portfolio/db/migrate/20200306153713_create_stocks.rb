@@ -4,6 +4,7 @@ class CreateStocks < ActiveRecord::Migration[6.0]
       t.string :symbol
       t.string :name
       t.float :price
+      t.string :stock_type
       t.references :portfolio, foreign_key: true
 
       t.timestamps
