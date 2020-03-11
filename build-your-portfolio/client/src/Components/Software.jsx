@@ -24,6 +24,12 @@ const vars = {
 };
 
 export default function Software(props) {
+
+
+let cash = props.invest
+
+
+
   const [open, setOpen] = useState(false);
 
   const [software, setSoftware] = useState([]);
@@ -104,6 +110,21 @@ export default function Software(props) {
     filterAmzn();
   }, [software]);
 
+  const enoughToBuy = (stockPrice) =>{
+    if (stockPrice < cash){
+      return <img className="buySell" src={Buy} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) - parseFloat(stockPrice).toFixed(2))} />
+    }
+  }
+
+  const enoughToSell =(stockPrice)=> {
+    // if(// i Own this stock){}
+    return(
+    <img className="buySell" src={Sell} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) + parseFloat(stockPrice).toFixed(2))}/>
+    )
+  }
+
+
+
   return (
     <div className={open ? "allStocks click" : "allStocks"}>
       <div className='PlusText'><img
@@ -123,10 +144,10 @@ export default function Software(props) {
                 <h1>{appleStocks[0] && appleStocks[0].price}</h1>
               </div>
               <div>
-                <img className="buySell" src={Buy} />
+                {appleStocks[0] && enoughToBuy(appleStocks[0].price)}
               </div>
               <div>
-                <img className="buySell" src={Sell} />
+                {appleStocks[0] && enoughToSell(appleStocks[0].price)}
               </div>
             </div>
           </motion.div>
@@ -138,10 +159,10 @@ export default function Software(props) {
               <h1>{googleStocks[0] && googleStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
+            {googleStocks[0] && enoughToBuy(googleStocks[0].price)}
             </div>
             <div>
-              <img className="buySell" src={Sell} />
+            {googleStocks[0] && enoughToSell(googleStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -152,10 +173,10 @@ export default function Software(props) {
               <h1>{faceStocks[0] && faceStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
+            {faceStocks[0] && enoughToBuy(faceStocks[0].price)}
             </div>
             <div>
-              <img className="buySell" src={Sell} />
+            {faceStocks[0] && enoughToSell(faceStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -166,10 +187,10 @@ export default function Software(props) {
               <h1>{microStocks[0] && microStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
+            {microStocks[0] && enoughToBuy(microStocks[0].price)}
             </div>
             <div>
-              <img className="buySell" src={Sell} />
+            {microStocks[0] && enoughToSell(microStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -180,10 +201,10 @@ export default function Software(props) {
               <h1>{amznStocks[0] && amznStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
+            {amznStocks[0] && enoughToBuy(amznStocks[0].price)}
             </div>
             <div>
-              <img className="buySell" src={Sell} />
+            {amznStocks[0] && enoughToSell(amznStocks[0].price)}
             </div>
           </motion.div>
         </div>

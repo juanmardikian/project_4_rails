@@ -8,11 +8,11 @@ import Banks from './Banks'
 export default function MainMenu(props) {
   return (
     <div>
-        <Software stocks={props.stocks} />
-        <Food stocks={props.stocks} />
-        <Health stocks={props.stocks}/>
-        <Robotics stocks={props.stocks} />
-        <Banks stocks={props.stocks}/>
+        <Software stocks={props.stocks} invest={props.invest} setInvest={props.setInvest} />
+        <Food stocks={props.stocks} invest={props.invest} setInvest={props.setInvest} />
+        <Health stocks={props.stocks} invest={props.invest} setInvest={props.setInvest}/>
+        <Robotics stocks={props.stocks} invest={props.invest} setInvest={props.setInvest} />
+        <Banks stocks={props.stocks} invest={props.invest} setInvest={props.setInvest}/>
     </div>
   )
 }

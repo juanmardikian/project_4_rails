@@ -8,8 +8,8 @@ export default function User(props) {
   if (localStorage.getItem("authToken")) {
     return (
       <div>
-        <UserHeader />
-        <MainMenu stocks={props.stocks}/>
+        <UserHeader invest={props.invest} investFormOpen={props.investFormOpen} handleInvestChange={props.handleInvestChange} setInvestFormOpen={props.setInvestFormOpen}/>
+        <MainMenu stocks={props.stocks} invest={props.invest} setInvest={props.setInvest}/>
         <Footer />
       </div>
     );

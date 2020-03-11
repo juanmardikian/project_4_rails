@@ -13,6 +13,16 @@ function App() {
   const [users, setUsers] = useState([]);
   const [stocks, setStocks] = useState([]);
 
+  const [invest, setInvest] = useState("");
+  const [investFormOpen, setInvestFormOpen] = useState(true);
+
+  const handleInvestChange = e => {
+    if(e.target){
+      setInvest(parseFloat(e.target.value));
+    }
+  };
+
+
   // First thing, the axios
 
   useEffect(() => {
@@ -36,7 +46,7 @@ function App() {
         <SignUp />
       </Route>
       <Route exact path="/User">
-        <User stocks={stocks}/>
+        <User stocks={stocks} invest={invest} investFormOpen={investFormOpen} handleInvestChange={handleInvestChange} setInvestFormOpen={setInvestFormOpen} setInvest={setInvest}/>
       </Route>
     </div>
   );

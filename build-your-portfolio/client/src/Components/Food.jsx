@@ -23,7 +23,12 @@ const vars = {
   }
 };
 
-export default function Food() {
+export default function Food(props) {
+
+
+  let cash = props.invest
+
+
   const [open, setOpen] = useState(false);
 
   const [food, setFood] = useState([]);
@@ -108,6 +113,21 @@ export default function Food() {
     // filterAmzn()
   }, [food]);
 
+
+  const enoughToBuy = (stockPrice) =>{
+    if (stockPrice < cash){
+      return <img className="buySell" src={Buy} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) - parseFloat(stockPrice).toFixed(2))} />
+    }
+  }
+
+  const enoughToSell =(stockPrice)=> {
+    // if(// i Own this stock){}
+    return(
+    <img className="buySell" src={Sell} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) + parseFloat(stockPrice).toFixed(2))}/>
+    )
+  }
+
+
   return (
     <div className={open ? "allStocks click" : "allStocks"}>
      <div className='PlusText'>
@@ -127,11 +147,11 @@ export default function Food() {
               <h1>{KOStocks[0] && KOStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
-            </div>
+                {KOStocks[0] && enoughToBuy(KOStocks[0].price)}
+              </div>
+              <div>
+                {KOStocks[0] && enoughToSell(KOStocks[0].price)}
+              </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
             <div>
@@ -141,11 +161,11 @@ export default function Food() {
               <h1>{PepStocks[0] && PepStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
-            </div>
+                {PepStocks[0] && enoughToBuy(PepStocks[0].price)}
+              </div>
+              <div>
+                {PepStocks[0] && enoughToSell(PepStocks[0].price)}
+              </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
             <div>
@@ -155,10 +175,10 @@ export default function Food() {
               <h1>{McdStocks[0] && McdStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {McdStocks[0] && enoughToBuy(McdStocks[0].price)}
+              </div>
+              <div>
+                {McdStocks[0] && enoughToSell(McdStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -169,10 +189,10 @@ export default function Food() {
               <h1>{BKCStocks[0] && BKCStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {BKCStocks[0] && enoughToBuy(BKCStocks[0].price)}
+              </div>
+              <div>
+                {BKCStocks[0] && enoughToSell(BKCStocks[0].price)}
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -183,10 +203,10 @@ export default function Food() {
               <h1>{SBUXStocks[0] && SBUXStocks[0].price}</h1>
             </div>
             <div>
-              <img className="buySell" src={Buy} />
-            </div>
-            <div>
-              <img className="buySell" src={Sell} />
+            {SBUXStocks[0] && enoughToBuy(SBUXStocks[0].price)}
+              </div>
+              <div>
+                {SBUXStocks[0] && enoughToSell(SBUXStocks[0].price)}
             </div>
           </motion.div>
         </div>
