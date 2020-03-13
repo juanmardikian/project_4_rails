@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
-import axios from "axios";
+
+import {getPortfolio} from './api-helper'
 
 
 
@@ -11,7 +12,9 @@ import User from "./Components/User";
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [userPortfolio, setUserPortfolio] = useState({})
   const [stocks, setStocks] = useState([]);
+  const [portfolioStocks, setPortfolioStocks] = useState(0.00)
 
   const [invest, setInvest] = useState("");
   const [investFormOpen, setInvestFormOpen] = useState(true);
@@ -22,21 +25,26 @@ function App() {
     }
   };
 
+  console.log(portfolioStocks)
 
   // First thing, the axios
 
   useEffect(() => {
-    // setStocks(get());
+    getUserPortfolio()
+    
+    
   }, []);
 
-  const getAllUsers = () => {
-    let url = "http://localhost:3000/users";
-    axios.get(url).then(res => {
-      setUsers(res.data);
-    });
-  };
 
+const getUserPortfolio = async () => {
+  if(localStorage.getItem('authToken')){
+    let res = await getPortfolio()
+    console.log(res)
+    setUserPortfolio(res)
+     }
+}
 
+console.log(userPortfolio)
   return (
     <div className="App">
       <Route exact path="/">
@@ -46,7 +54,7 @@ function App() {
         <SignUp />
       </Route>
       <Route exact path="/User">
-        <User stocks={stocks} invest={invest} investFormOpen={investFormOpen} handleInvestChange={handleInvestChange} setInvestFormOpen={setInvestFormOpen} setInvest={setInvest}/>
+        <User userPortfolio={userPortfolio} stocks={stocks} invest={invest} investFormOpen={investFormOpen} handleInvestChange={handleInvestChange} setInvestFormOpen={setInvestFormOpen} setInvest={setInvest} portfolioStocks={portfolioStocks} setPortfolioStocks={setPortfolioStocks}/>
       </Route>
     </div>
   );

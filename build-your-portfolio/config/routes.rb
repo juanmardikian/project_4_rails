@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :stocks do
     collection do #stock.all purchase
       get :available_stocks
-      get :purchase_stocks
+      put :purchase_stocks
     end
     member do #a single will be purchase, allow you to purchase one single stock
       put :purchase
@@ -24,4 +24,9 @@ Rails.application.routes.draw do
 
   # get "/stocks" => "stocks#fetch"
   get "/stocks_t/:stock_type" => "stocks#stocks_by_type"
+  post "/portfolios/add_cash" => "portfolios#add_cash"
+
+  get "/portfolios" => "portfolios#index"
+  put "/purchase" => "stocks#purchase"
+  put "/owned" =>'stocks#owned'
 end

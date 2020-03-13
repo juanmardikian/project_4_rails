@@ -13,7 +13,8 @@ if(AUTH){
   api = axios.create({
     baseURL: baseUrl,
     headers: {
-      authorization: AUTH
+      authorization: AUTH,
+      accept: 'application/json',
     }
   });
 } else {
@@ -58,3 +59,25 @@ export const getStocksByType = async (type) => {
   let response = await api.get(t)
   return response.data;
 } 
+
+export const BuyStock = async (symbol) => {
+  
+  let response = await api.put("/purchase", {symbol: symbol});
+  return response.data;
+}
+
+export const AddCash = async(total) => {
+  console.log(total)
+  let response = await api.post("/portfolios/add_cash", {cash_to_spare: total});
+  return response.data;
+}
+
+export const getPortfolio = async() => {
+  let response = await api.get("/portfolios");
+  return response.data;
+}
+
+// export const IOwnStock = async(symbol) => {
+//   let response = await api.get("/");
+//   return response.data;
+// }

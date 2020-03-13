@@ -44,8 +44,15 @@ class StocksController < ApplicationController
   end
 
   def purchase
-    @stock = Stock.find(params[:id])
-    if @stock.portfolio_id == nil
+    puts params
+    @stock = Stock.where(symbol: params[:symbol], portfolio_id: nil).first
+    @portfolio = @current_user.portfolios[0]
+    puts @portfolio.inspect
+    @price = @portfolio[:money_invested].to_f + @stock.price.to_f
+    @money_spent = @portfolio[:cash_to_spare] - @stock.price.to_f
+    @portfolio.update(money_invested: @price, cash_to_spare: @money_spent)
+
+    if @current_user.portfolios[0].stocks << @stock
       @stock.update(transactions_params)
       render json: { status: 200, stock: @stock }
     else
@@ -57,6 +64,10 @@ class StocksController < ApplicationController
     @stock = Stock.find(params[:id])
     @stock.update(portfolio_id: nil)
     render json: { status: 200, stock: @stock }
+  end
+
+  def owned
+    @stocks = @current_user.stocks.find_by(symbol: params[:symbol])
   end
 
   def destroy

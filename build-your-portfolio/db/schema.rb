@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2020_03_06_153713) do
 
   create_table "portfolios", force: :cascade do |t|
     t.string "name"
+    t.integer "cash_to_spare"
+    t.integer "money_invested"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

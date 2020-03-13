@@ -10,12 +10,12 @@ import amazon from "../images/amazon.png";
 import Buy from "../images/buyButton.png";
 import Sell from "../images/sellButton.png";
 
-import { getStocksByType } from "../api-helper";
+import { getStocksByType, BuyStock, IOwnStock } from "../api-helper";
 
 const vars = {
   shown: {
     opacity: 1,
-    x: '27%'
+    x: "27%"
   },
   hidden: {
     opacity: 0,
@@ -24,11 +24,9 @@ const vars = {
 };
 
 export default function Software(props) {
-
-
-let cash = props.invest
-
-
+  console.log(props)
+  let cash = props.invest;
+  
 
   const [open, setOpen] = useState(false);
 
@@ -110,30 +108,57 @@ let cash = props.invest
     filterAmzn();
   }, [software]);
 
-  const enoughToBuy = (stockPrice) =>{
-    if (stockPrice < cash){
-      return <img className="buySell" src={Buy} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) - parseFloat(stockPrice).toFixed(2))} />
+  const buyStock = async (stockPrice, symbol) => {
+
+
+
+
+    stockPrice = parseFloat(stockPrice).toFixed(2);
+    let myStocks = parseFloat(props.portfolioStocks + stockPrice).toFixed(2);
+    console.log();
+    props.setPortfolioStocks(myStocks);
+    cash = parseFloat(cash).toFixed(2);
+    console.log(stockPrice, cash);
+    let result = parseFloat(cash - stockPrice).toFixed(2);
+    props.setInvest(result);
+
+    let res = await BuyStock(symbol)
+    console.log(res)
+    window.location.reload(false)
+
+  };
+  console.log(props);
+
+
+  const enoughToBuy = (stockPrice, symbol) => {
+    if (stockPrice < props.userPortfolio.cash_to_spare) {
+      return (
+        <img
+          className="buySell"
+          src={Buy}
+          onClick={() => buyStock(stockPrice, symbol)}
+        />
+      );
     }
-  }
+  };
 
-  const enoughToSell =(stockPrice)=> {
-    // if(// i Own this stock){}
-    return(
-    <img className="buySell" src={Sell} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) + parseFloat(stockPrice).toFixed(2))}/>
-    )
-  }
+  const enoughToSell =() => {
 
-
+      return <img className="buySell" src={Sell} />
+  
+  };
 
   return (
     <div className={open ? "allStocks click" : "allStocks"}>
-      <div className='PlusText'><img
-        onClick={() => setOpen(!open)}
-        src={Plus}
-        className={open ? "Plus click" : "Plus"}
-      ></img>
-      <h2 className="PlusTitle">Software</h2></div>
-      <ul style={open ? {display: "flex"}:{display: "none"}}>
+      <div className="PlusText">
+        <img
+          onClick={() => setOpen(!open)}
+          src={Plus}
+          className={open ? "Plus click" : "Plus"}
+        ></img>
+        <h2 className="PlusTitle">Software</h2>
+      </div>
+      <ul style={open ? { display: "flex" } : { display: "none" }}>
         <div className="theLogos">
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
             <div>
@@ -144,11 +169,10 @@ let cash = props.invest
                 <h1>{appleStocks[0] && appleStocks[0].price}</h1>
               </div>
               <div>
-                {appleStocks[0] && enoughToBuy(appleStocks[0].price)}
+                {appleStocks[0] &&
+                  enoughToBuy(appleStocks[0].price, appleStocks[0].symbol)}
               </div>
-              <div>
-                {appleStocks[0] && enoughToSell(appleStocks[0].price)}
-              </div>
+              <div>{appleStocks[0] && enoughToSell(appleStocks[0].price)}</div>
             </div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
@@ -159,11 +183,10 @@ let cash = props.invest
               <h1>{googleStocks[0] && googleStocks[0].price}</h1>
             </div>
             <div>
-            {googleStocks[0] && enoughToBuy(googleStocks[0].price)}
+              {googleStocks[0] &&
+                enoughToBuy(googleStocks[0].price, googleStocks[0].symbol)}
             </div>
-            <div>
-            {googleStocks[0] && enoughToSell(googleStocks[0].price)}
-            </div>
+            <div>{googleStocks[0] && enoughToSell(googleStocks[0].price)}</div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
             <div>
@@ -173,11 +196,10 @@ let cash = props.invest
               <h1>{faceStocks[0] && faceStocks[0].price}</h1>
             </div>
             <div>
-            {faceStocks[0] && enoughToBuy(faceStocks[0].price)}
+            {faceStocks[0] &&
+                  enoughToBuy(faceStocks[0].price, faceStocks[0].symbol)}
             </div>
-            <div>
-            {faceStocks[0] && enoughToSell(faceStocks[0].price)}
-            </div>
+            <div>{faceStocks[0] && enoughToSell(faceStocks[0].price)}</div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
             <div>
@@ -186,12 +208,9 @@ let cash = props.invest
             <div style={{ textAlign: "center", fontSize: "1.5vw" }}>
               <h1>{microStocks[0] && microStocks[0].price}</h1>
             </div>
-            <div>
-            {microStocks[0] && enoughToBuy(microStocks[0].price)}
-            </div>
-            <div>
-            {microStocks[0] && enoughToSell(microStocks[0].price)}
-            </div>
+            {microStocks[0] &&
+                  enoughToBuy(microStocks[0].price, microStocks[0].symbol)}
+            <div>{microStocks[0] && enoughToSell(microStocks[0].price)}</div>
           </motion.div>
           <motion.div variants={vars} animate={open ? "shown" : "hidden"}>
             <div>
@@ -200,12 +219,9 @@ let cash = props.invest
             <div style={{ textAlign: "center", fontSize: "1.5vw" }}>
               <h1>{amznStocks[0] && amznStocks[0].price}</h1>
             </div>
-            <div>
-            {amznStocks[0] && enoughToBuy(amznStocks[0].price)}
-            </div>
-            <div>
-            {amznStocks[0] && enoughToSell(amznStocks[0].price)}
-            </div>
+            {amznStocks[0] &&
+                  enoughToBuy(amznStocks[0].price, amznStocks[0].symbol)}
+            <div>{amznStocks[0] && enoughToSell(amznStocks[0].price)}</div>
           </motion.div>
         </div>
       </ul>

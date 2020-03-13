@@ -2,8 +2,8 @@ class PortfoliosController < ApplicationController
   before_action :authorize_request
 
   def index
-    @portfolios = @current_user.portfolios
-    render json: { status: 200, portfolios: @portfolios }
+    @portfolios = @current_user.portfolios[0]
+    
   end
 
   def show
@@ -39,9 +39,20 @@ class PortfoliosController < ApplicationController
     render json: { status: 204 }
   end
 
+  def add_cash
+    @portfolio = @current_user.portfolios[0]
+    @portfolio.update(add_params)
+    @portfolio.save
+    render json: { status: 200, portfolio: @portfolio }
+  end
+
   private
 
   def portfolio_params
     params.require(:portfolio).permit(:name)
+  end
+
+  def add_params
+    params.permit(:cash_to_spare)
   end
 end

@@ -26,7 +26,7 @@ const vars = {
 export default function Food(props) {
 
 
-  let cash = props.invest
+  let cash = props.cashToInvest
 
 
   const [open, setOpen] = useState(false);
@@ -116,14 +116,14 @@ export default function Food(props) {
 
   const enoughToBuy = (stockPrice) =>{
     if (stockPrice < cash){
-      return <img className="buySell" src={Buy} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) - parseFloat(stockPrice).toFixed(2))} />
+      return <img className="buySell" src={Buy} onClick={() => props.setCashToInvest(parseFloat(cash).toFixed(2) - parseFloat(stockPrice).toFixed(2))} />
     }
   }
 
   const enoughToSell =(stockPrice)=> {
     // if(// i Own this stock){}
     return(
-    <img className="buySell" src={Sell} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) + parseFloat(stockPrice).toFixed(2))}/>
+    <img className="buySell" src={Sell} onClick={() => props.setCashToInvest(parseFloat(cash).toFixed(2) + parseFloat(stockPrice).toFixed(2))}/>
     )
   }
 

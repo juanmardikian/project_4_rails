@@ -7,6 +7,11 @@ class UsersController < ApplicationController
     render json: { status: 200, users: @users }
   end
 
+  def stocks
+    @stocks = @current_user.stocks
+    render json: { status: 200, stocks: @stocks }
+  end
+
   def show
     @user = User.find(params[:id])
     render json: @user
@@ -14,7 +19,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
+      @user.portfolios.build(cash_to_spare: 0, money_invested: 0).save
       render json: { status: 201, name: @user }
     else
       render json: { status: 422, error: @user.errors }
