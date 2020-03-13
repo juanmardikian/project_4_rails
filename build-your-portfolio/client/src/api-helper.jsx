@@ -77,6 +77,10 @@ export const getPortfolio = async() => {
   return response.data;
 }
 
+// export const deleteUser = async() => {
+//   let response = await api.destroy('/users/')
+// }
+
 // export const IOwnStock = async(symbol) => {
 //   let response = await api.get("/");
 //   return response.data;

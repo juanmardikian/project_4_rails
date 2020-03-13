@@ -131,6 +131,7 @@ export default function Software(props) {
 
 
   const enoughToBuy = (stockPrice, symbol) => {
+    
     if (stockPrice < props.userPortfolio.cash_to_spare) {
       return (
         <img

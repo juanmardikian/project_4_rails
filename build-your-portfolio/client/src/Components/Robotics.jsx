@@ -37,9 +37,9 @@ export default function Robotics(props) {
   let cash = props.invest
 
   const enoughToBuy = (stockPrice) =>{
-    if (stockPrice < cash){
+    // if (stockPrice < cash){
       return <img className="buySell" src={Buy} onClick={() => props.setInvest(parseFloat(cash).toFixed(2) - parseFloat(stockPrice).toFixed(2))} />
-    }
+    // }
   }
   
   const enoughToSell =(stockPrice)=> {

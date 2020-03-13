@@ -18,6 +18,7 @@ const handleSubmit = async(e) => {
 }
 
 
+
   return (
     <div className="userHeader" style={{ backgroundColor: "purple" }}>
       <div className="UserProfile">
@@ -33,10 +34,11 @@ const handleSubmit = async(e) => {
 
         /></form>}
         {/* <h1>{invest}</h1> */}
-        <h1>{ totalCash_to_spare}</h1>
+        <h1>Cash to Spare ${ totalCash_to_spare}</h1>
         {/* <h1>{parseFloat(portfolioStocks).toFixed(2)}</h1> */}
-        <h1>{amount_invested}</h1>
+        <h1>Amount Invested ${amount_invested}</h1>
       </div>
+     
     </div>
   );
 }

@@ -115,9 +115,9 @@ export default function Food(props) {
 
 
   const enoughToBuy = (stockPrice) =>{
-    if (stockPrice < cash){
+    // if (stockPrice < cash){
       return <img className="buySell" src={Buy} onClick={() => props.setCashToInvest(parseFloat(cash).toFixed(2) - parseFloat(stockPrice).toFixed(2))} />
-    }
+    // }
   }
 
   const enoughToSell =(stockPrice)=> {

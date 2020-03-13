@@ -67,6 +67,7 @@ export default function SignUp() {
             className="logIn"
             placeholder="password"
             value={formValue.password}
+            type='password'
             name="password"
           ></input>
         </div>
